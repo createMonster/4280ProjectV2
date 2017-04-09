@@ -4,8 +4,7 @@ import java.sql.*;
 import java.io.*;
 import java.util.*;
 
-
-public class DBManager {
+public final class DBManager {
 
     private final String DB_NAME = "aiad017_db";//really?
     private final String DB_USERNAME = "aiad017";
@@ -14,12 +13,12 @@ public class DBManager {
     private static DBManager instance;
     private List<String> sqlStatementNames;
 
-    Connection con = null;
-    PreparedStatement stmt = null;
-    ResultSet rs = null;
-    String strSQL = null;
-    String result = null;
-
+    private Connection con = null;
+    private PreparedStatement stmt = null;
+    private ResultSet rs = null;
+    private String strSQL = null;
+    private String result = null;
+    
     /**
      *
      * @param db
@@ -58,67 +57,69 @@ public class DBManager {
         rs.close();
     }
 
-    public String getSQLStatement(String name) throws IOException {
-
-        String filename = "sql.txt";
-        String line = null;
-        FileReader fileReader = null;
-        String statement = null;
-        BufferedReader bufferedReader = null;
-        try {
-            fileReader = new FileReader(filename);
-            bufferedReader = new BufferedReader(fileReader);
-            while ((line = bufferedReader.readLine()) != null) {
-                if (line.contains(name)) {
-                    int equalMark = line.indexOf("=");
-                    statement = line.substring(equalMark + 1);
-                    return statement;
-                }
-            }
-        } catch (FileNotFoundException ex) {
-            System.out.println(
-                    "Unable to open file '"
-                    + filename + "'");
-        } catch (IOException ex) {
-            // Or we could just do this: 
-            ex.printStackTrace();
-        } finally {
-            if (fileReader != null) {
-                bufferedReader.close();
-            }
-        }
-        return null;//TBD
-    }
+//    public String getSQLStatement(String name) throws IOException {
+//
+//        String filename = "C:\\Users\\wenloncao2\\Desktop\\4280ProjectV2\\WebApplication1\\src\\java\\beans\\sql.txt";
+//        String line = null;
+//        FileReader fileReader = null;
+//        String statement = "SQL STATEMENT NOT FOUND";
+//        BufferedReader br = null;
+//        try {
+//            fileReader = new FileReader(filename);
+//            br = new BufferedReader(fileReader);
+//            line = br.readLine();
+//            while (line != null) {
+//                return "Success!";
+////                if (line.contains(name)) {
+////                    int equalMark = line.indexOf("=");
+////                    statement = line.substring(equalMark + 2);
+////                    return statement;   
+////                }
+////                line = br.readLine();
+//            }
+//        } catch (FileNotFoundException ex) {
+//            System.out.println(
+//                    "Unable to open file '"
+//                    + filename + "'");
+//        } catch (IOException ex) {
+//            // Or we could just do this: 
+//            ex.printStackTrace();
+//        } finally {
+//            if (fileReader != null) {
+//                br.close();
+//            }
+//        }
+//        return statement;
+//     
+//    }
 
     //to be modified
     public ResultSet executeSQLStatement(String name, String parameters) throws IOException, SQLException {
-        String statement = getSQLStatement(name);
+        SQLManager sqlm = new SQLManager();
+        String statement = sqlm.getStatement(name);
         //String firstWord = statement.substring(0, statement.indexOf(' '));
         String[] parameter = parameters.split(" ");
+        stmt = con.prepareStatement(statement);
         for (int i = 0; i < parameter.length; i++) {
             stmt.setString(i + 1, parameter[i]);//to be modified
-        }
-
-        stmt = con.prepareStatement(statement);
-        //if(firstWord == "SELECT" || firstWord =="select"){			
+        }   
+		
         rs = stmt.executeQuery(statement);
         return rs;
-        //}
-//		else{
-//			int rows = stmt.executeUpdate(statement);
-//			return new String("Success");
-//		}
+
     }
 
-    public int updateSQLStatement(String name, String parameters) throws IOException {
-        String statement = getSQLStatement(name);
-        //String firstWord = statement.substring(0, statement.indexOf(' '));
+    public int updateSQLStatement(String name, String parameters) throws IOException, SQLException {
+        SQLManager sqlm = new SQLManager();
+        String statement = sqlm.getStatement(name);
+
+        //return statement;
         String[] parameter = parameters.split(" ");
+        stmt = con.prepareStatement(statement);
         try {
             for (int i = 0; i < parameter.length; i++) {
-                stmt.setString(i + 1, parameter[i]);//to be modified
+                stmt.setString (i + 1, parameter[i]);//to be modified
             }
-            stmt = con.prepareStatement(statement);
             int rows = stmt.executeUpdate(statement);
             return rows;
         } catch (SQLException sqle) {

@@ -21,15 +21,16 @@
                     String password = newCustomer.getPassword();
                     String phone = newCustomer.getPhone();
                     String parameters = id + " " + email + " " + username + " " + password + " " + phone;
+                    //String row = manager.updateSQLStatement("REGISTER", parameters);
                     int row = manager.updateSQLStatement("REGISTER", parameters);
-
+                    out.print(row);
                     if (row == 1) {
                         out.print("Registration Successfull!" + "<a href='registerLogin.jsp'>Go to Login</a>");
                     } else {
                         out.print("Registration failed!" + "<a href='registerLogin.jsp'>Go back to register again</a>");
                     }
                 } catch (NullPointerException e) {
-                    out.print("Something happened");
+                    out.print(e.toString());
                 }
 
             %>
