@@ -19,10 +19,6 @@
 <form action="loginProcess.jsp" method="post">  
 Email:<input type="text" name="email"/><br/><br/>  
 Password:<input type="password" name="password"/><br/><br/>
-<%--<jsp:setProperty name = "oldCustomer" property = "*" />--%>
-<%
-    //request.setAttribute("oldCustomer", oldCustomer);
-%>
 <%--<jsp:setProperty name = "oldCustomer" 
 				 property = "email" 
 				 value = '<%= request.getParameter("oldEmail") %>'/>

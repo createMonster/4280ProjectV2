@@ -19,6 +19,8 @@
         <h3>
         <%
             //Customer oldCustomer = (Customer)request.getAttribute("oldCustomer");
+            
+            session.setAttribute("loginStatus", false);
             try {
                 String email = oldCustomer.getEmail();
                 String password = oldCustomer.getPassword();
@@ -29,7 +31,8 @@
                     oldPass = rs.getString(1);
                 }
                 if (password.equals(oldPass)) {
-                    out.print("Login Successfull!" + "<a href='index.html'>Return to the index</a>");
+                    out.print("Login Successfull!" + "<a href='index.jsp'>Return to the index</a>");
+                    session.setAttribute("loginStatus", true);
                 } else {
                     //out.println(password + " " + oldPass);
                     out.print("Login failed!" + "<a href='registerLogin.jsp'>Go back to register or login again</a>");
