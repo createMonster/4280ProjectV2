@@ -50,7 +50,6 @@ public class DBManager {
         } catch (SQLException sqlex) {
             sqlex.printStackTrace();
         }
-        throw new UnsupportedOperationException();
     }
 
     public void disconnect() throws SQLException {

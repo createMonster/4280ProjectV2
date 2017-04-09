@@ -10,8 +10,8 @@
 
 <BODY>
 <H1>ARE YOU A MEMBER OF US? </H1>
-<jsp:useBean id = "oldCustomer" class = "package.Customer" scope="session"/>
-<jsp:useBean id = "newCustomer" class = "package.Customer" scope="session"/>
+<%--<jsp:useBean id = "oldCustomer" class = "beans.Customer" scope="session"/>--%>
+<jsp:useBean id = "newCustomer" class = "beans.Customer" scope="session"/>
 <CENTER>
 
 <h3>I am! </h3>
@@ -19,8 +19,10 @@
 <form action="loginProcess.jsp" method="post">  
 Email:<input type="text" name="email"/><br/><br/>  
 Password:<input type="password" name="password"/><br/><br/>
-<jsp:setProperty name = "oldCustomer" property = "*" />
-
+<%--<jsp:setProperty name = "oldCustomer" property = "*" />--%>
+<%
+    //request.setAttribute("oldCustomer", oldCustomer);
+%>
 <%--<jsp:setProperty name = "oldCustomer" 
 				 property = "email" 
 				 value = '<%= request.getParameter("oldEmail") %>'/>
@@ -40,7 +42,9 @@ Name:<input type="text" name="username"/><br/><br/>
 Password:<input type="password" name="password"/><br/><br/>	
 Phone number: <input type="text" name="phone"/> <br/><br/>
 <jsp:setProperty name = "newCustomer" property = "*" />
-
+<%
+    request.setAttribute("newCustomer", newCustomer);
+%>
 <%--<jsp:setProperty name = "newCustomer" 
 				 property = "id" 
 				 value = '<%= request.getParameter("newId") %>'/>
