@@ -36,7 +36,7 @@ Password:<input type="password" name="password"/><br/><br/>
   
 <h3>Not yet! Register now! </h3>
 <form action="regProcess.jsp" method="post">
-Your ID:<input type="text" name="id"/><br/><br/> 
+<!--Your ID:<input type="text" name="id"/><br/><br/> -->
 Email:<input type="text" name="email"/><br/><br/> 
 Name:<input type="text" name="username"/><br/><br/>
 Password:<input type="password" name="password"/><br/><br/>	

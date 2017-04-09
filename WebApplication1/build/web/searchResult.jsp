@@ -11,7 +11,7 @@
 <BODY>
 <H1>Best Available Flights</H1>
 <CENTER>
-<jsp:useBean id="search"
+<jsp:useBean id=""
              class="beans.Search"
              scope="session" />
 Finding flights for

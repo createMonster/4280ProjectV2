@@ -15,12 +15,13 @@
             <%
                 try {
                     DBManager manager = DBManager.getInstance();
-                    String id = newCustomer.getId();
+                    //String id = newCustomer.getId();
                     String email = newCustomer.getEmail();
                     String username = newCustomer.getUsername();
                     String password = newCustomer.getPassword();
                     String phone = newCustomer.getPhone();
-                    String parameters = id + " " + email + " " + username + " " + password + " " + phone;
+                    //String parameters = id + " " + email + " " + username + " " + password + " " + phone;
+                    String parameters = email + " " + username + " " + password + " " + phone;
                     //String row = manager.updateSQLStatement("REGISTER", parameters);
                     int row = manager.updateSQLStatement("REGISTER", parameters);
                     out.print(row);

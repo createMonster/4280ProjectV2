@@ -31,7 +31,7 @@
                 if (password.equals(oldPass)) {
                     out.print("Login Successfull!" + "<a href='index.html'>Return to the index</a>");
                 } else {
-                    out.println(password + " " + oldPass);
+                    //out.println(password + " " + oldPass);
                     out.print("Login failed!" + "<a href='registerLogin.jsp'>Go back to register or login again</a>");
                 }
             } catch (NullPointerException e) {

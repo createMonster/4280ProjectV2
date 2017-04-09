@@ -5,6 +5,14 @@
             30
         </session-timeout>
     </session-config>
+    <servlet>
+        <servlet-name>Servlet</servlet-name>
+        <servlet-class>Servlet/Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet</servlet-name>
+        <url-pattern>goSearch</url-pattern>
+    </servlet-mapping>
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
