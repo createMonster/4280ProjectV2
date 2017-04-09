@@ -1,0 +1,4 @@
+NEWCUSTOMER = INSERT INTO CCWuser VALUES();
+GETFLIGHTS = SELECT * FROM CCWflight where DepAirport = ? and ArrAirport = ? and DepTime = ? and ArrTime = ?
+REGISTER = INSERT into CCWuser VALUES(?, ?, ?, ?, ?)
+LOGIN = SELECT Upwd from CCWuser where Uemail = ?

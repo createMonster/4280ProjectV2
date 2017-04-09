@@ -17,14 +17,16 @@
 <h3>I am! </h3>
 
 <form action="loginProcess.jsp" method="post">  
-Email:<input type="text" name="oldEmail"/><br/><br/>  
-Password:<input type="password" name="oldPassword"/><br/><br/>
-<jsp:setProperty name = "oldCustomer" 
+Email:<input type="text" name="email"/><br/><br/>  
+Password:<input type="password" name="password"/><br/><br/>
+<jsp:setProperty name = "oldCustomer" property = "*" />
+
+<%--<jsp:setProperty name = "oldCustomer" 
 				 property = "email" 
 				 value = '<%= request.getParameter("oldEmail") %>'/>
 <jsp:setProperty name = "oldCustomer" 
 				 property = "password" 
-				 value = '<%= request.getParameter("oldPassword") %>'/>
+				 value = '<%= request.getParameter("oldPassword") %>'/>--%>
 				 
 <input type="submit" value="Login"/> 
 </form>
@@ -32,12 +34,14 @@ Password:<input type="password" name="oldPassword"/><br/><br/>
   
 <h3>Not yet! Register now! </h3>
 <form action="regProcess.jsp" method="post">
-Your ID:<input type="text" name="newId"/><br/><br/> 
-Email:<input type="text" name="newEmail"/><br/><br/> 
-Name:<input type="text" name="newUsername"/><br/><br/>
-Password:<input type="password" name="newPassword"/><br/><br/>	
-Phone number: <input type="text" name="newPhone"/> <br/><br/>
-<jsp:setProperty name = "newCustomer" 
+Your ID:<input type="text" name="id"/><br/><br/> 
+Email:<input type="text" name="email"/><br/><br/> 
+Name:<input type="text" name="username"/><br/><br/>
+Password:<input type="password" name="password"/><br/><br/>	
+Phone number: <input type="text" name="phone"/> <br/><br/>
+<jsp:setProperty name = "newCustomer" property = "*" />
+
+<%--<jsp:setProperty name = "newCustomer" 
 				 property = "id" 
 				 value = '<%= request.getParameter("newId") %>'/>
 <jsp:setProperty name = "newCustomer" 
@@ -51,7 +55,7 @@ Phone number: <input type="text" name="newPhone"/> <br/><br/>
 				 value = '<%= request.getParameter("newPassword") %>'/>
 <jsp:setProperty name = "newCustomer" 
 				 property = "phone" 
-				 value = '<%= request.getParameter("newPhone") %>'/>
+				 value = '<%= request.getParameter("newPhone") %>'/>--%>
 <input type="submit" value="Register"/> 
 </form>
 </CENTER>

@@ -47,7 +47,7 @@ public class Servlet extends HttpServlet {
 //    else {
       // The methods that use the following parameters will
       // check for missing or malformed values.
-	  Search search = new Search();
+      Search search = new Search();
       search.setStartDate(request.getParameter("startDate"));
       search.setEndDate(request.getParameter("endDate"));
       search.setOrigin(request.getParameter("origin"));
