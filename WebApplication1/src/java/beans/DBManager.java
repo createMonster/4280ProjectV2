@@ -6,18 +6,18 @@ import java.util.*;
 
 public final class DBManager {
 
-    private final String DB_NAME = "aiad017_db";//really?
-    private final String DB_USERNAME = "aiad017";
-    private final String DB_USERPWD = "aiad017";
-    private final String url = "jdbc:sqlserver://w2ksa.cs.cityu.edu.hk:1433;databaseName = aiad017_db;";
+    private final String DB_NAME = "aiad037_db";
+    private final String DB_USERNAME = "aiad037";
+    private final String DB_USERPWD = "aiad037";
+    private final String url = "jdbc:sqlserver://w2ksa.cs.cityu.edu.hk:1433;databaseName = aiad037_db;";
     private static DBManager instance;
-    private List<String> sqlStatementNames;
+    //private List<String> sqlStatementNames;
 
     private Connection con = null;
     private PreparedStatement stmt = null;
     private ResultSet rs = null;
-    private String strSQL = null;
-    private String result = null;
+    //private String strSQL = null;
+    //private String result = null;
     
     /**
      *
