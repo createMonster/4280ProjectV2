@@ -104,7 +104,7 @@ public final class DBManager {
             stmt.setString(i + 1, parameter[i]);//to be modified
         }   
 		
-        rs = stmt.executeQuery(statement);
+        rs = stmt.executeQuery();
         return rs;
 
     }
@@ -120,11 +120,11 @@ public final class DBManager {
             for (int i = 0; i < parameter.length; i++) {
                 stmt.setString (i + 1, parameter[i]);//to be modified
             }
-            int rows = stmt.executeUpdate(statement);
+            int rows = stmt.executeUpdate();
             return rows;
         } catch (SQLException sqle) {
             System.out.print(sqle.getMessage());
-            return 0;
+            return -1;
         }
     }
 
