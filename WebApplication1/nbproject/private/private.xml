@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/wenloncao2/Desktop/4280ProjectV2/WebApplication1/src/java/beans/Search.java</file>
-            <file>file:/C:/Users/wenloncao2/Desktop/4280ProjectV2/WebApplication1/src/java/Servlet.java</file>
-            <file>file:/C:/Users/wenloncao2/Desktop/4280ProjectV2/WebApplication1/web/loginProcess.jsp</file>
-            <file>file:/C:/Users/wenloncao2/Desktop/4280ProjectV2/WebApplication1/web/regProcess.jsp</file>
-            <file>file:/C:/Users/wenloncao2/Desktop/4280ProjectV2/WebApplication1/src/java/beans/DBManager.java</file>
-            <file>file:/C:/Users/wenloncao2/Desktop/4280ProjectV2/WebApplication1/web/registerLogin.jsp</file>
+            <file>file:/C:/Users/wenloncao2/Desktop/4280ProjectV2/WebApplication1/web/changePwd.jsp</file>
+            <file>file:/C:/Users/wenloncao2/Desktop/4280ProjectV2/WebApplication1/web/bookTicket.jsp</file>
+            <file>file:/C:/Users/wenloncao2/Desktop/4280ProjectV2/WebApplication1/web/personalAccount.jsp</file>
+            <file>file:/C:/Users/wenloncao2/Desktop/4280ProjectV2/WebApplication1/web/index.jsp</file>
         </group>
     </open-files>
 </project-private>

@@ -54,7 +54,7 @@ End date (MM/DD/YY):
       <input name="account" value="Edit Account" type="SUBMIT">
       </small>
 </th></tr></tbody></table>
-</p></center>
+</p></center> 
 </form>
 <br>
 <p align="CENTER">

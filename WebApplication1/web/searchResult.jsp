@@ -41,8 +41,6 @@
  %>       
 <P>
 <P>
-<!--<INPUT TYPE="submit" NAME="bookItButton" VALUE="Book It!" onClick="alert(&quot;You are required to log in!&quot;);" />-->
-<!--<INPUT TYPE="submit" NAME="bookItButton" VALUE="Book It!" onClick="alert(&quot;Not implemented yet!&quot;);" />-->
 </FORM>
 
 
